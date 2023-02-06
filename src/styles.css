@@ -1,0 +1,24 @@
+/* to show boxes */
+/* * {
+  border: 1px black solid;
+} */
+
+/* simple reset */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+form {
+  padding-bottom: 2rem;
+}
+
+.streetElement {
+  border: black solid 1px;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin: 0.1rem;
+}

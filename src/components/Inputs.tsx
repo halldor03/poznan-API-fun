@@ -1,34 +1,22 @@
-import React, { useState, useRef } from "react";
+interface InputsType {
+  inputValues: InputsChildrenType;
+  setInputValues: (children: InputsChildrenType) => void;
+}
 
-type InputsType = {
-  fetchedStreets: string[];
-  setFetchedStreets: (streets: string[]) => void;
-};
+interface InputsChildrenType {
+  name: string;
+  select: string;
+}
 
-export default function Inputs({
-  fetchedStreets,
-  setFetchedStreets,
-}: InputsType) {
-  // const nameInput = useRef<HTMLInputElement>(null);
-  // const surnameInput = useRef<HTMLInputElement>(null);
-  // const selectInput = useRef<HTMLSelectElement>(null);
-  const [inputValues, setInputValues] = useState({
-    name: "",
-    surname: "",
-    select: "",
-  });
-
-  console.log(inputValues);
-
+export default function Inputs({ inputValues, setInputValues }: InputsType) {
   return (
     <>
       <form>
         <fieldset>
-          <label htmlFor="nameInput">Name</label>
+          <label htmlFor="nameInput">Ulica</label>
           <input
             type="text"
             id="nameInput"
-            // ref={nameInput}
             value={inputValues.name}
             onChange={(e) =>
               setInputValues({
@@ -38,26 +26,11 @@ export default function Inputs({
             }
           />
         </fieldset>
+
         <fieldset>
-          <label htmlFor="surnameInput">Surname</label>
-          <input
-            type="text"
-            id="surnameInput"
-            // ref={surnameInput}
-            value={inputValues.surname}
-            onChange={(e) =>
-              setInputValues({
-                ...inputValues,
-                surname: e.target.value,
-              })
-            }
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="selectInput">Type</label>
+          <label htmlFor="selectInput">Rodzaj</label>
           <select
             id="selectInput"
-            //  ref={selectInput}
             value={inputValues.select}
             onChange={(e) =>
               setInputValues({
@@ -66,12 +39,14 @@ export default function Inputs({
               })
             }
           >
-            <option value="null">-</option>
-            <option value="ul">ul.</option>
-            <option value="pl">pl.</option>
-            <option value="dr.wew">dr. wew.</option>
+            <option value="">-</option>
+            <option value="ul.">ul.</option>
+            <option value="pl.">pl.</option>
+            <option value="al.">al.</option>
             <option value="tunel">tunel</option>
             <option value="most">most</option>
+            <option value="wiadukt">wiadukt</option>
+            <option value="rondo">rondo</option>
           </select>
         </fieldset>
       </form>
