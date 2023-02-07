@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Inputs from "./components/Inputs";
-import GeoportalAPI from "./components/GeoportalAPI";
+import MapAPI from "./components/MapAPI";
 
 // interface StreetsType {
 //   id: number;
@@ -17,11 +17,13 @@ import GeoportalAPI from "./components/GeoportalAPI";
 function App() {
   const [fetchedStreets, setFetchedStreets] = useState<string[]>([]);
   const [filteredStreets, setFilteredStreets] = useState<string[]>([]);
+  const [selectedStreetCoords, setSelectedStreetCoords] = useState<string[]>(
+    []
+  );
   const [inputValues, setInputValues] = useState({
     name: "",
     select: "",
   });
-
   useEffect(() => {
     fetch(
       "https://www.poznan.pl/featureserver/featureserver.cgi/ulice/all.json"
@@ -56,12 +58,21 @@ function App() {
   return (
     <>
       <Inputs inputValues={inputValues} setInputValues={setInputValues} />
-      <GeoportalAPI />
+      {selectedStreetCoords.length !== 0 ? (
+        <MapAPI selectedStreetCoords={selectedStreetCoords} />
+      ) : null}
+
       {inputValues.name === "" && inputValues.select === ""
         ? fetchedStreets.map((street: any) => {
             //FIX THIS "ANY" LATER
             return (
-              <div key={street.id} className="streetElement">
+              <div
+                key={street.id}
+                className="streetElement"
+                onClick={() =>
+                  setSelectedStreetCoords(street.geometry.coordinates)
+                }
+              >
                 {street.properties.a4} {street.properties.a6}
               </div>
             );
@@ -69,7 +80,13 @@ function App() {
         : filteredStreets.map((street: any) => {
             //FIX THIS "ANY" LATER
             return (
-              <div key={street.id} className="streetElement">
+              <div
+                key={street.id}
+                className="streetElement"
+                onClick={() =>
+                  setSelectedStreetCoords(street.geometry.coordinates)
+                }
+              >
                 {street.properties.a4} {street.properties.a6}
               </div>
             );

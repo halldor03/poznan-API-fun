@@ -22,3 +22,8 @@ form {
   padding: 0.25rem;
   margin: 0.1rem;
 }
+
+#map {
+  height: 400px;
+  width: 100%;
+}
