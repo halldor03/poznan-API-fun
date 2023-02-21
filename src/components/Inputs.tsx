@@ -24,6 +24,7 @@ export default function Inputs({ inputValues, setInputValues }: InputsType) {
                 name: e.target.value,
               })
             }
+            autoFocus={true}
           />
         </fieldset>
 

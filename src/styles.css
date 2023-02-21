@@ -23,7 +23,20 @@ form {
   margin: 0.1rem;
 }
 
-#map {
+.leaflet-container {
   height: 400px;
   width: 100%;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  flex-wrap: wrap;
+}
+
+li {
+  padding: 0.25rem;
 }
