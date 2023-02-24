@@ -28,7 +28,7 @@ function App() {
     select: "",
   });
   const [currentPage, setCurrentPage] = useState(1);
-  const [streetsPerPage, setStreetsPerPage] = useState(25);
+  const [streetsPerPage] = useState(25);
   useEffect(() => {
     // console.log(loading);
     fetch(
@@ -66,14 +66,18 @@ function App() {
 
   const indexOfLastStreet = currentPage * streetsPerPage;
   const indexOfFirstStreet = indexOfLastStreet - streetsPerPage;
-  const currentlyDisplayedFetchedStreets = filteredStreets.slice(
+  const currentlyDisplayedFetchedStreets = fetchedStreets.slice(
     indexOfFirstStreet,
     indexOfLastStreet
   );
-  const currentlyDisplayedFilteredStreets = fetchedStreets.slice(
+  const currentlyDisplayedFilteredStreets = filteredStreets.slice(
     indexOfFirstStreet,
     indexOfLastStreet
   );
+
+  const changePage = (pageNumber: any) => {
+    setCurrentPage(pageNumber);
+  };
   // console.log(currentlyDisplayedFetchedStreets);
   // console.log(currentlyDisplayedFilteredStreets);
   return (
@@ -95,6 +99,8 @@ function App() {
             ? fetchedStreets.length
             : filteredStreets.length
         }
+        paginate={changePage}
+        currentPage={currentPage}
       />
     </>
   );

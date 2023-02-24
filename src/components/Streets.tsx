@@ -18,20 +18,7 @@ export default function Streets({
 }: StreetsType) {
   return (
     <>
-      {filteredStreets.map((street: any) => {
-        //FIX THIS "ANY" LATER
-        return (
-          <div
-            key={street.id}
-            className="streetElement"
-            onClick={() => setSelectedStreetCoords(street.geometry.coordinates)}
-          >
-            {street.properties.a4} {street.properties.a6}
-          </div>
-        );
-      })}
-
-      {/* {inputValues.name === "" && inputValues.select === ""
+      {inputValues.name === "" && inputValues.select === ""
         ? fetchedStreets.map((street: any) => {
             //FIX THIS "ANY" LATER
             return (
@@ -59,7 +46,7 @@ export default function Streets({
                 {street.properties.a4} {street.properties.a6}
               </div>
             );
-          })} */}
+          })}
     </>
   );
 }
