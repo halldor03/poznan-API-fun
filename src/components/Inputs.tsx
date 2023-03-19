@@ -10,10 +10,11 @@ interface InputsChildrenType {
 
 export default function Inputs({ inputValues, setInputValues }: InputsType) {
   return (
-    <>
+    <header>
+      <div className="title">Poznan streets search engine</div>
       <form>
         <fieldset>
-          <label htmlFor="nameInput">Ulica</label>
+          <label htmlFor="nameInput">Ulica: </label>
           <input
             type="text"
             id="nameInput"
@@ -29,7 +30,7 @@ export default function Inputs({ inputValues, setInputValues }: InputsType) {
         </fieldset>
 
         <fieldset>
-          <label htmlFor="selectInput">Rodzaj</label>
+          <label htmlFor="selectInput">Rodzaj: </label>
           <select
             id="selectInput"
             value={inputValues.select}
@@ -51,6 +52,6 @@ export default function Inputs({ inputValues, setInputValues }: InputsType) {
           </select>
         </fieldset>
       </form>
-    </>
+    </header>
   );
 }

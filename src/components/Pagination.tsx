@@ -27,7 +27,6 @@ export default function Pagination({
             <a
               className={number === currentPage ? "activePage" : "inactivePage"}
               onClick={() => paginate(number)}
-              href="!#"
             >
               {number}
             </a>

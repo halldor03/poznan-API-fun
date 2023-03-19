@@ -28,7 +28,7 @@ function App() {
     select: "",
   });
   const [currentPage, setCurrentPage] = useState(1);
-  const [streetsPerPage] = useState(25);
+  const [streetsPerPage] = useState(26);
   useEffect(() => {
     // console.log(loading);
     fetch(

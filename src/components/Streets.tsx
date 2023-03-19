@@ -17,7 +17,7 @@ export default function Streets({
   setSelectedStreetCoords,
 }: StreetsType) {
   return (
-    <>
+    <div className="streetsContainer">
       {inputValues.name === "" && inputValues.select === ""
         ? fetchedStreets.map((street: any) => {
             //FIX THIS "ANY" LATER
@@ -47,6 +47,6 @@ export default function Streets({
               </div>
             );
           })}
-    </>
+    </div>
   );
 }

@@ -1,3 +1,11 @@
+App that lets you search streets located in Poznan and shows them on a map. Check it out here: https://halldor03.github.io/poznan-API-fun/\
+
+Libraries that I used:
+
+- [Leaflet](https://leafletjs.com/)
+- [React Leaflet](https://react-leaflet.js.org/)
+- [Proj4js](https://proj4js.org/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
