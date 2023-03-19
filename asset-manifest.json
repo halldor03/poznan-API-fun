@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/poznan-API-fun/static/css/main.ff1db3e0.css",
+    "main.js": "/poznan-API-fun/static/js/main.83b28626.js",
+    "index.html": "/poznan-API-fun/index.html",
+    "main.ff1db3e0.css.map": "/poznan-API-fun/static/css/main.ff1db3e0.css.map",
+    "main.83b28626.js.map": "/poznan-API-fun/static/js/main.83b28626.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff1db3e0.css",
+    "static/js/main.83b28626.js"
+  ]
+}
