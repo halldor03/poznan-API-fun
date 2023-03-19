@@ -1,4 +1,4 @@
-App that lets you search streets located in Poznan and shows them on a map. Check it out here: https://halldor03.github.io/poznan-API-fun/\
+App that lets you search streets located in Poznan and shows them on a map. Check it out here: https://halldor03.github.io/poznan-API-fun/
 
 Libraries that I used:
 

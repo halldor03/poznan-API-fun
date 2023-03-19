@@ -2,6 +2,7 @@
   "name": "select-component",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://halldor03.github.io/poznan-API-fun",
   "dependencies": {
     "@auth0/auth0-react": "^2.0.0",
     "@react-google-maps/api": "^2.18.1",
@@ -29,7 +30,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@types/leaflet": "^1.9.1"
+    "@types/leaflet": "^1.9.1",
+    "gh-pages": "^5.0.0"
   }
 }
